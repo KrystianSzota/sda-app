@@ -6,12 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  licznik = 0;
+  seconds = 0;
+  decySeconds = 0;
 
   constructor() {
     setInterval(() => {
-      this.licznik++;
-      console.log(this.licznik);
+      this.decySeconds++;
+      if(this.decySeconds === 10){
+        this.seconds++;
+        this.decySeconds = 0;
+      }
     }, 100);
   }
 }
