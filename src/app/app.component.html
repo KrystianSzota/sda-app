@@ -1,6 +1,8 @@
 <h1>{{ seconds }} : {{ decySeconds }}</h1>
 
-<button (click)="startStoper()" [disabled]="isActive">Start</button>
-<button (click)="resetStoper()" [disabled]="isActive">Reset</button>
-<button (click)="stopStoper()" [disabled]="!isActive">Stop</button>
+<button (click)="startStoper()" *ngIf="!isActive">Start</button>
+<button (click)="resetStoper()" *ngIf="!isActive">Reset</button>
+<button (click)="stopStoper()" *ngIf="isActive">Stop</button>
+<button (click)="addRound()" *ngIf="isActive">Round</button>
 
+<div *ngFor="let round of rounds">{{round.seconds}}</div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Round } from 'src/models/stoper';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ export class AppComponent {
   seconds = 0;
   decySeconds = 0;
   isActive = false;
+  rounds: Round[] = [];
   private intervalId: any = undefined;
 
   constructor() {}
@@ -34,5 +36,13 @@ export class AppComponent {
   resetStoper(): void {
     this.seconds = 0;
     this.decySeconds = 0;
+  }
+
+  addRound(): void {
+    this.rounds.push({
+      decySeconds: this.decySeconds,
+      seconds: this.seconds,
+    });
+    console.log(this.rounds);
   }
 }
