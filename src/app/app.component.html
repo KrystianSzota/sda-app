@@ -1,4 +1,6 @@
 <h1>{{ seconds }} : {{ decySeconds }}</h1>
 
-<button (click)="startStoper()">Start</button>
-<button (click)="stopStoper()">Stop</button>
+<button (click)="startStoper()" [disabled]="isActive">Start</button>
+<button (click)="resetStoper()" [disabled]="isActive">Reset</button>
+<button (click)="stopStoper()" [disabled]="!isActive">Stop</button>
+
