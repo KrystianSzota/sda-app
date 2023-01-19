@@ -11,9 +11,12 @@ export class AppComponent {
   decySeconds = 0;
   isActive = false;
   rounds: Round[] = [];
+  userName: string = '';
   private intervalId: any = undefined;
 
-  constructor() {}
+  constructor() {
+    this.userName = "MojaFajnaWartosc";
+  }
 
   startStoper(): void {
     this.isActive = true;
@@ -36,6 +39,7 @@ export class AppComponent {
   resetStoper(): void {
     this.seconds = 0;
     this.decySeconds = 0;
+    this.rounds = [];
   }
 
   addRound(): void {
@@ -43,6 +47,5 @@ export class AppComponent {
       decySeconds: this.decySeconds,
       seconds: this.seconds,
     });
-    console.log(this.rounds);
   }
 }

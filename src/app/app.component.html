@@ -5,4 +5,8 @@
 <button (click)="stopStoper()" *ngIf="isActive">Stop</button>
 <button (click)="addRound()" *ngIf="isActive">Round</button>
 
-<div *ngFor="let round of rounds">{{round.seconds}}</div>
+<input [(ngModel)]="userName">
+
+<ol>
+  <li *ngFor="let round of rounds">{{ round.seconds }} : {{round.decySeconds}}</li>
+</ol>
