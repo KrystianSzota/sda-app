@@ -13,6 +13,7 @@
   <button (click)="addUser()">Add user</button>
 </div>
 
-<app-users-list [usersInList]="users"></app-users-list>
+<a [routerLink]="'/'">Home</a>
+<a [routerLink]="'/rounds'">Rounds</a>
 
-<app-rounds-list></app-rounds-list>
+<router-outlet></router-outlet>

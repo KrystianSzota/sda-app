@@ -12,8 +12,6 @@ export class AppComponent {
   decySeconds = 0;
   isActive = false;
 
-  users: User[] = [];
-
   userName: string = '';
   private intervalId: any = undefined;
 
@@ -41,9 +39,9 @@ export class AppComponent {
   resetStoper(): void {
     this.seconds = 0;
     this.decySeconds = 0;
-    this.users = [];
     this.userName = '';
 
+    this.stoperService.resetUsers();
     this.stoperService.resetRounds();
   }
 
@@ -52,11 +50,7 @@ export class AppComponent {
   }
 
   addUser(): void {
-    this.users.push({
-      userName: this.userName,
-      decySeconds: this.decySeconds,
-      seconds: this.seconds,
-    });
+    this.stoperService.addUser(this.userName, this.seconds, this.decySeconds);
     this.userName = '';
   }
 }
