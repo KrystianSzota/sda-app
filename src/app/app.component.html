@@ -16,8 +16,4 @@
   </li>
 </ul>
 
-<ol>
-  <li *ngFor="let round of rounds">
-    {{ round.seconds }}:{{ round.decySeconds }}
-  </li>
-</ol>
+<app-rounds-list [roundsInList]="rounds"></app-rounds-list>
