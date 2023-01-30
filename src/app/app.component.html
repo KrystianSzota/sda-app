@@ -10,10 +10,7 @@
   <button (click)="addUser()">Add user</button>
 </div>
 
-<ul>
-  <li *ngFor="let user of users">
-    {{ user.userName }} - {{ user.seconds }}:{{ user.decySeconds }}
-  </li>
-</ul>
+
+<app-users-list [usersInList]="users"></app-users-list>
 
 <app-rounds-list [roundsInList]="rounds"></app-rounds-list>
