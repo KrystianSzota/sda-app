@@ -3,6 +3,9 @@
 <app-toolbar
   [isActive]="isActive"
   (onStartClicked)="startStoper()"
+  (onAddRoundClicked)="addRound()"
+  (onResetClicked)="resetStoper()"
+  (onStopClicked)="stopStoper()"
 ></app-toolbar>
 
 <div *ngIf="!isActive && (decySeconds !== 0 || seconds !== 0)">
@@ -12,4 +15,4 @@
 
 <app-users-list [usersInList]="users"></app-users-list>
 
-<app-rounds-list [roundsInList]="rounds"></app-rounds-list>
+<app-rounds-list></app-rounds-list>
