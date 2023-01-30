@@ -1,15 +1,14 @@
 <h1>{{ seconds }} : {{ decySeconds }}</h1>
 
-<button (click)="startStoper()" *ngIf="!isActive">Start</button>
-<button (click)="resetStoper()" *ngIf="!isActive">Reset</button>
-<button (click)="stopStoper()" *ngIf="isActive">Stop</button>
-<button (click)="addRound()" *ngIf="isActive">Round</button>
+<app-toolbar
+  [isActive]="isActive"
+  (onStartClicked)="startStoper()"
+></app-toolbar>
 
 <div *ngIf="!isActive && (decySeconds !== 0 || seconds !== 0)">
   <input [(ngModel)]="userName" />
   <button (click)="addUser()">Add user</button>
 </div>
-
 
 <app-users-list [usersInList]="users"></app-users-list>
 

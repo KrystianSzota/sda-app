@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { RoundsListComponent } from './rounds-list/rounds-list.component';
 import { UsersListComponent } from './users-list/users-list.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RoundsListComponent,
-    UsersListComponent
+    UsersListComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
