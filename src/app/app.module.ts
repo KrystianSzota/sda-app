@@ -7,20 +7,17 @@ import { FormsModule } from '@angular/forms';
 import { RoundsListComponent } from './rounds-list/rounds-list.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     RoundsListComponent,
     UsersListComponent,
-    ToolbarComponent
+    ToolbarComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

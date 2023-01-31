@@ -1,21 +1,31 @@
-import { Component } from '@angular/core';
-import { Round, User } from 'src/models/stoper';
+import { Component, OnInit } from '@angular/core';
+import { Round, User, UserResponse } from 'src/models/stoper';
 import { StoperService } from './stoper.service';
+import { UsersService } from './users.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   seconds = 0;
   decySeconds = 0;
   isActive = false;
+  user: UserResponse | undefined = undefined;
 
   userName: string = '';
   private intervalId: any = undefined;
 
-  constructor(private stoperService: StoperService) {
+  constructor(
+    private stoperService: StoperService,
+    private usersService: UsersService
+  ) {}
+
+  ngOnInit(): void {
+    this.usersService.getUserById(2).subscribe((user) => {
+      this.user = user;
+    });
   }
 
   startStoper(): void {

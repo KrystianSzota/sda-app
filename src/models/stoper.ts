@@ -8,3 +8,19 @@ export interface User {
   seconds: number;
   decySeconds: number;
 }
+
+export interface UserFromWeb {
+  id: number;
+  email: string;
+  first_name: string;
+  last_name: string;
+  avatar: string;
+}
+export interface Support {
+  url: string;
+  text: string;
+}
+export interface UserResponse {
+  data: UserFromWeb;
+  support: Support;
+}
