@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Round, User, UserResponse } from 'src/models/stoper';
+import { Round, User, UserFromWeb, UserResponse, UsersResponse } from 'src/models/stoper';
 import { StoperService } from './stoper.service';
 import { UsersService } from './users.service';
 
@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   decySeconds = 0;
   isActive = false;
   user: UserResponse | undefined = undefined;
+  users: UserFromWeb[] = [];
 
   userName: string = '';
   private intervalId: any = undefined;
@@ -25,6 +26,10 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.usersService.getUserById(2).subscribe((user) => {
       this.user = user;
+    });
+
+    this.usersService.getUsers().subscribe((users) => {
+      this.users = users.data;
     });
   }
 

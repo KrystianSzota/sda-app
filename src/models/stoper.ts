@@ -24,3 +24,11 @@ export interface UserResponse {
   data: UserFromWeb;
   support: Support;
 }
+
+export interface UsersResponse {
+  page: number;
+  per_page: number;
+  total: number;
+  total_pages: number;
+  data: UserFromWeb[];
+}

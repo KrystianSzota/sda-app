@@ -1,5 +1,11 @@
 <div>{{user | json}}</div>
 
+<div *ngFor="let user of users">
+  <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+  <p>Email: {{ user.email }}</p>
+  <img [src]="user.avatar" alt="User Avatar">
+</div>
+
 <h1>{{ seconds }} : {{ decySeconds }}</h1>
 
 <app-toolbar
